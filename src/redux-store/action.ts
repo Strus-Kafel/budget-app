@@ -1,6 +1,6 @@
 const Types = {
     SET_AUTH_KEY: "SET_AUTH_KEY",
-    SET_LOGIN: "SET_LOGIN"
+    SET_LOGIN: "SET_LOGIN",
   };
   // actions
   const setAuthKey = (key :any) =>({
