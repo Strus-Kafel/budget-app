@@ -8,6 +8,8 @@ const mapStateToProps = (state :any) => ({
 const mapDispatchToProps = (dispatch :any) => ({
     setAuthKey: (key :any)=> dispatch(ACTIONS.setAuthKey(key)),
     setLogin: (login :string) => dispatch(ACTIONS.setLogin(login)),
+    setDate: (date : Date ) => dispatch(ACTIONS.setDate(date)),
+    setMonthData: (data : any ) => dispatch(ACTIONS.setMonthData(data))
 });
 
 export {
