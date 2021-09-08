@@ -2,12 +2,16 @@ import ACTIONS from "./action";
 
 interface DefaultState {
   authKey: any,
-  login: string
+  login: string,
+  date: Date,
+  monthData : any
 }
 
 const defaultState :DefaultState = {
   authKey: "",
-  login: ""
+  login: "",
+  date: new Date(),
+  monthData={}
 };
 
 const Reducer =  (state = defaultState, action :any) => {
@@ -20,12 +24,24 @@ const Reducer =  (state = defaultState, action :any) => {
       }
     }
     case ACTIONS.Types.SET_LOGIN: {
-      let id = (action.info.id >= 1) ? ((action.info.id <= 898) ? action.info.id : 898) : 1;
         //console.log(state)
         return {
           ...state,
           login: action.login
         }
+    }
+    case ACTIONS.Types.SET_DATE: {
+      return {
+        ...state,
+        date: action.date
+      }
+    }
+    case ACTIONS.Types.SET_MONTH_DATA: {
+      return {
+        ...state,
+        monthData: action.monthData
+      }
+      
     }
     default:
       return state;
