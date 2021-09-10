@@ -1,4 +1,4 @@
-async function getMonthData(authKey :any){
+async function getMonthData(authKey :any, month :number){
     //return await fetch('loclahost:5000/....')
 
     //testowy mock
@@ -48,9 +48,56 @@ async function getMonthData(authKey :any){
 
     ]
 }
-async function getMonthExpectations(authKey :any, month){
+async function getMonthExpectations(authKey :any, month :number){
+    //mockuje dane
     return {
         incomes : 2300,
         expenses: 2100
     }
+}
+async function addExpense(authKey :any, expense :any){
+    //return await fetch(....),{
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     credentials: 'include',
+    //     body: JSON.stringify({
+    //         authKey: authKey,
+    //         expense: expense
+    //     })
+    // }
+    return {
+        none
+    }
+}
+async function addIncome(authKey :any, income :any){
+        //return await fetch(....),{
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     credentials: 'include',
+    //     body: JSON.stringify({
+    //         authKey: authKey,
+    //         income: income
+    //     })
+    // }
+    return {
+        none
+    }
+}
+async function login(login :string,password :any){
+    //return await fetch(....),{
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     credentials: 'include',
+    //     body: JSON.stringify({
+    //         login: login
+    //         password:password
+    //     })
+    // }
+    return {
+        none
+    }
+}
+async function getAuthKey(){
+    //return await fetch('...')
+    return 'key'
 }
