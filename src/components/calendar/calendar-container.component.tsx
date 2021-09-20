@@ -1,0 +1,70 @@
+import { getMonthData } from "../../fetches";
+
+import { Box, Button } from "@mui/material";
+
+import { connect, useSelector } from "react-redux";
+
+import ChangeMonthPanel from "./change-month.component";
+
+import { DayTile } from "./day-tile.component";
+import {
+  mapDispatchToProps,
+  mapStateToProps,
+} from "../../redux-store/opeartions";
+import { getAuthKey } from "../../fetches";
+
+const Calendar = ({ setDate, setMonthData }: any) => {
+  const date = useSelector((state: any) => state.date);
+  const monthData = useSelector((state: any) => state.monthData);
+
+  //TODO: doesn't re-render after changing monthData in change-month.component.tsx
+
+  // async function fetchData() {
+  //   let data = await getMonthData(getAuthKey(), date.getMonth() + 1);
+  //   setMonthData(data);
+  // }
+  // fetchData();
+
+  return (
+    <Box id="calendar-container">
+      <ChangeMonthPanel />
+      {
+        //What is the purpose of this ?
+        /* <Box>
+        <p>pon</p>
+        <p>wt</p>
+        <p>śr</p>
+        <p>czw</p>
+        <p>pią</p>
+        <p>sob</p>
+        <p>niedz</p>
+      </Box> */
+      }
+      {
+        //tu trzeba wymyslic funkcje, zeby wrzucalo przed dni puste kafelki
+        //if pierwszy dzien miesiaca !== pon to wstawia puste kafelki
+        // (new Date(date.getFullYear(), date.getMonth()+1, 1).getDay()+1 !==1 )?
+        // (for(let i =0; i<=new Date(date.getFullYear(), date.getMonth()+1, 1).getDay()+1;i++){
+        // <DayTile
+        // />
+        //}
+        //     ''
+        // ): ('')
+        //new Date(new Date(new Date().setMonth(date.getMonth())).setDate(1)).getDay()
+        //albo lepiej, sprawdzac to w api
+      }
+      {//TODO: add unique key
+      monthData[0] !== undefined
+        ? monthData.map((data: any) => <DayTile data={data} />)
+        : "Loading..."}
+    </Box>
+  );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
+
+// TODO: add function to all date to get number of days in month
+// const monthDays = function () {
+//   var d = new Date(this.getFullYear(), this.getMonth() + 1, 0);
+//   return d.getDate();
+// };

@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './root.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './store'
+import store from "./redux-store/store";
 import { Provider } from 'react-redux'
 
 ReactDOM.render(
