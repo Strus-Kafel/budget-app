@@ -11,7 +11,7 @@ const defaultState :DefaultState = {
   authKey: "",
   login: "",
   date: new Date(),
-  monthData={}
+  monthData:{}
 };
 
 const Reducer =  (state = defaultState, action :any) => {

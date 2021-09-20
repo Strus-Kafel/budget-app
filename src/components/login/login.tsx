@@ -1,19 +1,19 @@
-import encrypt from '../../crypt';
+// import {encrypt} from '../../crypt';
 
-import login from '../../fetches'
+import {login} from '../../fetches'
 
 import {useRef} from 'react'
 
-import {Box,TextField,Button} from '@material-ui/core/'
+import {Box,TextField,Button} from '@mui/material'
 
-//tu trzeba ogarnac logowanie z google outah2
+//TODO login with google OAuth2
 export const Login = () =>{
     const loginRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
     return(
     <Box id="expenses-adder">
         <TextField 
-        reef= {loginRef}
+        ref= {loginRef}
         />
         <TextField 
         ref={passwordRef}

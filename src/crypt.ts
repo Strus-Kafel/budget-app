@@ -1,8 +1,8 @@
-import JSEncrypt from 'jsencrypt';
+import JSEncrypt from "jsencrypt";
 
-function encrypt(text, publicKey) {
-    const encrypt = new JSEncrypt();
-    encrypt.setPublicKey(publicKey);
-    const encrypted = encrypt.encrypt(text);
-    return encrypted;
-  }
+export default function encrypt(text: any, publicKey: any) {
+  const encrypt = new JSEncrypt();
+  encrypt.setPublicKey(publicKey);
+  const encrypted = encrypt.encrypt(text);
+  return encrypted;
+}
