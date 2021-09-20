@@ -1,6 +1,4 @@
-import { getMonthData } from "../../fetches";
-
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { connect, useSelector } from "react-redux";
 
@@ -11,10 +9,9 @@ import {
   mapDispatchToProps,
   mapStateToProps,
 } from "../../redux-store/opeartions";
-import { getAuthKey } from "../../fetches";
 
 const Calendar = ({ setDate, setMonthData }: any) => {
-  const date = useSelector((state: any) => state.date);
+  // const date = useSelector((state: any) => state.date);
   const monthData = useSelector((state: any) => state.monthData);
 
   //TODO: doesn't re-render after changing monthData in change-month.component.tsx
@@ -53,10 +50,12 @@ const Calendar = ({ setDate, setMonthData }: any) => {
         //new Date(new Date(new Date().setMonth(date.getMonth())).setDate(1)).getDay()
         //albo lepiej, sprawdzac to w api
       }
-      {//TODO: add unique key
-      monthData[0] !== undefined
-        ? monthData.map((data: any) => <DayTile data={data} />)
-        : "Loading..."}
+      {
+        //TODO: add unique key
+        monthData[0] !== undefined
+          ? monthData.map((data: any) => <DayTile data={data} />)
+          : "Loading..."
+      }
     </Box>
   );
 };

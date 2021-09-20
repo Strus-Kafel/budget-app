@@ -7,7 +7,7 @@ import {Navbar} from './components/navbar/navbar-container.component';
 import Calendar from './components/calendar/calendar-container.component';
 
 import { mapStateToProps, mapDispatchToProps } from './redux-store/opeartions';
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 
 import {useEffect} from 'react'
 
