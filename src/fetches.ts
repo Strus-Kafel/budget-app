@@ -1,7 +1,7 @@
 export async function getMonthData(authKey: any, month: number) {
   //return await fetch('loclahost:5000/....')
 
-  //TODO replace mock with real data
+  //TODO: replace mock with real data
   const mockData = [
     {
       incomes: [
@@ -49,7 +49,7 @@ export async function getMonthData(authKey: any, month: number) {
   return mockData;
 }
 export async function getMonthExpectations(authKey: any, month: number) {
-  //TODO replace mock with real data
+  //TODO: replace mock with real data
   const mockData = {
     incomes: 2300,
     expenses: 2100,

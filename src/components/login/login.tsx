@@ -6,7 +6,7 @@ import {useRef} from 'react'
 
 import {Box,TextField,Button} from '@mui/material'
 
-//TODO login with google OAuth2
+//TODO: login with google OAuth2
 export const Login = () =>{
     const loginRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)

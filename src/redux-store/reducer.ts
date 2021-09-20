@@ -1,47 +1,46 @@
 import ACTIONS from "./action";
 
 interface DefaultState {
-  authKey: any,
-  login: string,
-  date: Date,
-  monthData : any
+  authKey: any;
+  login: string;
+  date: Date;
+  monthData: any;
 }
 
-const defaultState :DefaultState = {
+const defaultState: DefaultState = {
   authKey: "",
   login: "",
   date: new Date(),
-  monthData:{}
+  monthData: {},
 };
 
-const Reducer =  (state = defaultState, action :any) => {
+const Reducer = (state = defaultState, action: any) => {
   switch (action.type) {
     case ACTIONS.Types.SET_AUTH_KEY: {
       //console.log(action);
       return {
         ...state,
-        authKey: action.authKey
-      }
+        authKey: action.authKey,
+      };
     }
     case ACTIONS.Types.SET_LOGIN: {
-        //console.log(state)
-        return {
-          ...state,
-          login: action.login
-        }
+      //console.log(state)
+      return {
+        ...state,
+        login: action.login,
+      };
     }
     case ACTIONS.Types.SET_DATE: {
       return {
         ...state,
-        date: action.date
-      }
+        date: action.date,
+      };
     }
     case ACTIONS.Types.SET_MONTH_DATA: {
       return {
         ...state,
-        monthData: action.monthData
-      }
-      
+        monthData: action.monthData,
+      };
     }
     default:
       return state;

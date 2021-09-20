@@ -11,14 +11,26 @@ import {
   mapDispatchToProps,
   mapStateToProps,
 } from "../../redux-store/opeartions";
+import { getAuthKey } from "../../fetches";
 
-const Calendar = () => {
+const Calendar = ({ setDate, setMonthData }: any) => {
   const date = useSelector((state: any) => state.date);
   const monthData = useSelector((state: any) => state.monthData);
+
+  //TODO: doesn't re-render after changing monthData in change-month.component.tsx
+
+  // async function fetchData() {
+  //   let data = await getMonthData(getAuthKey(), date.getMonth() + 1);
+  //   setMonthData(data);
+  // }
+  // fetchData();
+
   return (
     <Box id="calendar-container">
       <ChangeMonthPanel />
-      <Box>
+      {
+        //What is the purpose of this ?
+        /* <Box>
         <p>pon</p>
         <p>wt</p>
         <p>śr</p>
@@ -26,7 +38,8 @@ const Calendar = () => {
         <p>pią</p>
         <p>sob</p>
         <p>niedz</p>
-      </Box>
+      </Box> */
+      }
       {
         //tu trzeba wymyslic funkcje, zeby wrzucalo przed dni puste kafelki
         //if pierwszy dzien miesiaca !== pon to wstawia puste kafelki
@@ -37,21 +50,20 @@ const Calendar = () => {
         //}
         //     ''
         // ): ('')
+        //new Date(new Date(new Date().setMonth(date.getMonth())).setDate(1)).getDay()
         //albo lepiej, sprawdzac to w api
-        //TODO doesn't work , undefined is not a function
-        // monthData.map((data: any)=>(
-        //     <DayTile
-        //     data = {data}
-        //     />
-        // ))
       }
+      {//TODO: add unique key
+      monthData[0] !== undefined
+        ? monthData.map((data: any) => <DayTile data={data} />)
+        : "Loading..."}
     </Box>
   );
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
 
-// TODO add function to all date to get number of days in month
+// TODO: add function to all date to get number of days in month
 // const monthDays = function () {
 //   var d = new Date(this.getFullYear(), this.getMonth() + 1, 0);
 //   return d.getDate();

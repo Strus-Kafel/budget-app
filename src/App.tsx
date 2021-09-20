@@ -14,7 +14,7 @@ import {useEffect} from 'react'
 import {getAuthKey} from './fetches'
 
 
-//TODO write this function 
+//TODO: write this function 
 function setAuthKey(arg:any) {
   return null;
 }
