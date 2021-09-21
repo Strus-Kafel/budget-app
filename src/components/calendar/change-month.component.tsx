@@ -1,4 +1,4 @@
-import { Button, Stack } from "@mui/material";
+import { Button, Stack } from '@mui/material';
 
 import {
   mapStateToProps,
@@ -25,9 +25,10 @@ const ChangeMonthPanel = ({ setDate, setMonthData }: any) => {
       <Button
         variant="contained"
         onClick={async () => {
-          var changed = new Date();
+          var changed = new Date(date)
           changed.setMonth(date.getMonth() - 1);
           setDate(changed);
+          console.log(changed)
           let data = await getMonthData(getAuthKey(), date.getMonth() - 1);
           setMonthData(data);
         }}
@@ -37,7 +38,7 @@ const ChangeMonthPanel = ({ setDate, setMonthData }: any) => {
       <Button
         variant="contained"
         onClick={async () => {
-          var changed = new Date();
+          var changed = new Date(date)
           setDate(changed);
           let data = await getMonthData(getAuthKey(), date.getMonth() + 1);
           setMonthData(data);
@@ -48,7 +49,7 @@ const ChangeMonthPanel = ({ setDate, setMonthData }: any) => {
       <Button
         variant="contained"
         onClick={async () => {
-          var changed = new Date();
+          var changed = new Date(date)
           changed.setMonth(date.getMonth() + 1);
           setDate(changed);
           let data = await getMonthData(getAuthKey(), date.getMonth() + 1);

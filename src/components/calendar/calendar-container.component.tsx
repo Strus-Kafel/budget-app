@@ -106,8 +106,8 @@ const Calendar = ({ setDate, setMonthData }: any) => {
         {/* {new Date(
           new Date(new Date().setMonth(date.getMonth())).setDate(1)
         ).getDay()}{" "} */}
-        {calendarArray.map((data: any) => (
-          <DayTile data={data} />
+        {calendarArray.map((data: any,index :number) => (
+          <DayTile data={data} key={index} />
         ))}
 
         {/* {
