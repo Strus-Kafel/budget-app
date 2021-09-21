@@ -18,10 +18,9 @@ export const DayTile = ({ data }: any) => {
               </p>
             );
           })}
-          {data.expenses.map((item: any) => {
-            const key = data.expenses.indexOf(item);
+          {data.expenses.map((item: any, index :number) => {
             return (
-              <p key={key}>
+              <p key={index}>
                 + {item.amount}
                 <br />
                 {item.from}

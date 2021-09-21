@@ -80,7 +80,7 @@ export async function addIncome(authKey: any, income: any) {
   // }
   return null;
 }
-export async function login(login: string, password: any) {
+export async function login(login: string | undefined, password: any) {
   //return await fetch(....),{
   //     method: 'POST',
   //     headers: { 'Content-Type': 'application/json' },

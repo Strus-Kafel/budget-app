@@ -14,14 +14,16 @@ export const Login = () =>{
     <Box id="expenses-adder">
         <TextField 
         ref= {loginRef}
+        required
         />
         <TextField 
         ref={passwordRef}
+        required
         />
         <Button
         variant = 'contained'
         onClick = {() =>{
-            login
+            login(loginRef.current?.value,passwordRef.current?.value)
         }}
         />
     </Box>

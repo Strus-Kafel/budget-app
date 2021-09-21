@@ -15,7 +15,8 @@ const Calendar = ({ setDate, setMonthData }: any) => {
   const monthData = useSelector((state: any) => state.monthData);
 
   //TODO: doesn't re-render after changing monthData in change-month.component.tsx
-
+  // calendarArray should be monthData
+  
   // async function fetchData() {
   //   let data = await getMonthData(getAuthKey(), date.getMonth() + 1);
   //   setMonthData(data);

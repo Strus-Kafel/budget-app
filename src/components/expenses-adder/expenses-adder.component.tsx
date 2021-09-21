@@ -1,16 +1,27 @@
 import { useRef } from "react";
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Button, Stack, TextField } from '@mui/material';
 
-import { addExpense, getAuthKey } from "../../fetches";
+import { addExpense, getAuthKey } from '../../fetches';
+
+import {ExpensesAdderView} from './expenses-adder-view.component';
 
 export const ExpensesAdder = () => {
-  const textFielRef = useRef<HTMLInputElement>(null);
+  const expensesAdderViewRef = useRef<HTMLDivElement>(null);
   return (
+   
     <Stack direction="row" id="expenses-adder">
-      <TextField ref={textFielRef} label={"wydatki"} />
+      <ExpensesAdderView  setRef={expensesAdderViewRef}/>
+      {/* <TextField ref={textFielRef} label={"wydatki"} /> */}
+      {
+        /*TODO:
+          add this in other view or something, to add description expenses/indomes options etc.
+
+        */
+      }
       <Button
         onClick={() => {
-          addExpense(getAuthKey(), textFielRef.current);
+          console.log(expensesAdderViewRef.current!.style.display = "block")
+          //addExpense(getAuthKey(), textFieldRef.current?.value);
         }}
       >
         Dodaj
