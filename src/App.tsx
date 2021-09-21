@@ -27,7 +27,7 @@ function App() {
   },[]) //a tu wywali blad i trzeba eslita dodac
   return (
     <Box 
-    style={{width :"100vw",height:"100vh"}}
+    style={{width :"100vw",height:"100vh",display:"grid",placeItems:"center"}}
     className="App"
     >
       <Navbar />

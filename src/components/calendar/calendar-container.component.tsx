@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid, Stack } from "@mui/material";
 
 import { connect, useSelector } from "react-redux";
 
@@ -11,7 +11,7 @@ import {
 } from "../../redux-store/opeartions";
 
 const Calendar = ({ setDate, setMonthData }: any) => {
-  // const date = useSelector((state: any) => state.date);
+  const date = useSelector((state: any) => state.date);
   const monthData = useSelector((state: any) => state.monthData);
 
   //TODO: doesn't re-render after changing monthData in change-month.component.tsx
@@ -21,9 +21,56 @@ const Calendar = ({ setDate, setMonthData }: any) => {
   //   setMonthData(data);
   // }
   // fetchData();
-
+  var calendarArray = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ];
   return (
-    <Box id="calendar-container">
+    <Stack
+      id="calendar-container"
+      justifyContent="space-between"
+      sx={{ borderRadius: 3 }}
+    >
       <ChangeMonthPanel />
       {
         //What is the purpose of this ?
@@ -50,13 +97,27 @@ const Calendar = ({ setDate, setMonthData }: any) => {
         //new Date(new Date(new Date().setMonth(date.getMonth())).setDate(1)).getDay()
         //albo lepiej, sprawdzac to w api
       }
-      {
-        //TODO: add unique key
-        monthData[0] !== undefined
-          ? monthData.map((data: any) => <DayTile data={data} />)
-          : "Loading..."
-      }
-    </Box>
+      <Grid
+        container
+        alignItems="stretch"
+        columns={7}
+        sx={{ height: "100%", borderRadius: 3, overflow: "hidden" }}
+      >
+        {/* {new Date(
+          new Date(new Date().setMonth(date.getMonth())).setDate(1)
+        ).getDay()}{" "} */}
+        {calendarArray.map((data: any) => (
+          <DayTile data={data} />
+        ))}
+
+        {/* {
+          //TODO: add unique key
+          monthData[0] !== undefined
+            ? monthData.map((data: any) => <DayTile data={data} />)
+            : "Loading..."
+        } */}
+      </Grid>
+    </Stack>
   );
 };
 

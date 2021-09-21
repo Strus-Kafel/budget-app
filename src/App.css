@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: rgb(147, 77, 77);
 }
 
 .App-logo {
@@ -28,14 +29,26 @@
   color: #61dafb;
 }
 
-#expenses-adder{
-  display: inline-block;
-  width: 10vw;
-  height: 20vh;
-padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px ;
-  font-size: .5em;
+#tile {
+  /* width: calc(100% / 7); */
+  /* height: calc(100% / 6); */
+  padding: 1vw;
+  border: 1px solid gray;
+  font-size: 0.5em;
+  background: rgb(250, 228, 228);
+}
+#calendar-container {
+  background: rgb(223, 145, 145);
+  padding: 1vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width:  61.8vw;
+  height: 80vh;
+}
+#expenses-adder {
+  background: rgb(250, 228, 228);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 @keyframes App-logo-spin {
