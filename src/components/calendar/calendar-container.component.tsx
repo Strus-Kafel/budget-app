@@ -1,4 +1,4 @@
-import { Box, Grid, Stack } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 
 import { connect, useSelector } from "react-redux";
 
