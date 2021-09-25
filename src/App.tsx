@@ -5,6 +5,7 @@ import {Box} from '@mui/material';
 import {Summary} from './components/summary/summary-container.component';
 import {Navbar} from './components/navbar/navbar-container.component';
 import Calendar from './components/calendar/calendar-container.component';
+import {ExpensesAdder} from './components/expenses-adder/expenses-adder.component';
 
 import { mapStateToProps, mapDispatchToProps } from './redux-store/opeartions';
 import { connect } from "react-redux";
@@ -31,6 +32,7 @@ function App() {
     className="App"
     >
       <Navbar />
+      <ExpensesAdder />
       <Calendar />
       <Summary />
     </Box>

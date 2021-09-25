@@ -38,7 +38,7 @@ const ChangeMonthPanel = ({ setDate, setMonthData }: any) => {
       <Button
         variant="contained"
         onClick={async () => {
-          var changed = new Date(date)
+          var changed = new Date()
           setDate(changed);
           let data = await getMonthData(getAuthKey(), date.getMonth() + 1);
           setMonthData(data);

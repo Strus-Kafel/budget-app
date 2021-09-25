@@ -1,5 +1,28 @@
-#navbar-container{
-    width: 100vw;
-    height: 10vh;
+#navbar-container {
     background-color: purple;
+}
+
+.slideAnim {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+#navbar-elements {
+    display: none;
+}
+
+#navbar-elements>* {
+    color: white;
+}
+
+@keyframes slide {
+    from {
+        width: 50px;
+        height: 100vh;
+    }
+    to {
+        width: 15vw;
+        height: 100vh
+    }
 }

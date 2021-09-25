@@ -1,7 +1,5 @@
 import { useRef } from "react";
-import { Button, Stack, TextField } from '@mui/material';
-
-import { addExpense, getAuthKey } from '../../fetches';
+import { Button, Stack } from '@mui/material';
 
 import {ExpensesAdderView} from './expenses-adder-view.component';
 
