@@ -15,13 +15,7 @@ import {useEffect} from 'react'
 import {getAuthKey} from './fetches'
 
 
-//TODO: write this function 
-function setAuthKey(arg:any) {
-  return null;
-}
-
-
-function App() {
+function App({setAuthKey} :any) :FC {
   useEffect(()=>{
     //tu bedzie jakis await pewnie
     setAuthKey(getAuthKey())
