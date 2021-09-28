@@ -6,8 +6,9 @@ import {useRef} from 'react'
 
 import {Box,TextField,Button} from '@mui/material'
 
-//TODO: login with google OAuth2
+//TODO: login with google OAuth2, maybe later
 export const Login = () =>{
+    const authKey = useSelector((state: any) => state.authKey)
     const loginRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
     return(
@@ -23,7 +24,7 @@ export const Login = () =>{
         <Button
         variant = 'contained'
         onClick = {() =>{
-            login(loginRef.current?.value,passwordRef.current?.value)
+            login(loginRef.current?.value,passwordRef.current?.value,authKey)
         }}
         />
     </Box>

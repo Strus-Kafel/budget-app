@@ -5,7 +5,7 @@ export const DayTile = ({ data }: any) => {
     return (
       <>
         <Grid item xs={1} id="tile">
-          {/* {//TODO: define function mapData() to clean this mess} */}
+          {/* {//TODO: define functional component mapData() to clean this mess} */}
           {data.incomes.map((item: any) => {
             const key = data.incomes.indexOf(item);
             return (

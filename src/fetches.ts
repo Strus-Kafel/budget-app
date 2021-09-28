@@ -1,5 +1,7 @@
+import encrypt from './crypt';
+
 export async function getMonthData(authKey: any, month: number) {
-  //return await fetch('loclahost:5000/....')
+  //return await fetch('localhost:5000/....')
 
   //TODO: replace mock with real data
   const mockData = [
@@ -56,6 +58,7 @@ export async function getMonthExpectations(authKey: any, month: number) {
   };
   return mockData;
 }
+//addExpense and addIncome can be one function
 export async function addExpense(authKey: any, expense: any) {
   //return await fetch(....),{
   //     method: 'POST',
@@ -80,14 +83,14 @@ export async function addIncome(authKey: any, income: any) {
   // }
   return null;
 }
-export async function login(login: string | undefined, password: any) {
+export async function login(login: string | undefined, password: any,authKey : any) {
   //return await fetch(....),{
   //     method: 'POST',
   //     headers: { 'Content-Type': 'application/json' },
   //     credentials: 'include',
   //     body: JSON.stringify({
-  //         login: login
-  //         password:password
+  //         login: encrypt(login,authKey)
+  //         password:encrypt(password,authKey)
   //     })
   // }
   return null;
